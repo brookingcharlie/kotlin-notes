@@ -3,6 +3,7 @@ package org.example
 import org.junit.Test
 import kotlin.test.assertEquals
 
+// Based on https://kotlinlang.org/docs/reference/basic-syntax.html
 class BasicSyntaxTest {
     @Test
     fun `function notation`() {
