@@ -6,19 +6,19 @@ import kotlin.test.assertEquals
 class BasicSyntaxTest {
     @Test
     fun `function notation`() {
-        fun sum1(a: Int, b: Int): Int {
+        fun addA(a: Int, b: Int): Int {
             return a + b
         }
-        fun sum2(a: Int, b: Int) = a + b
-        assertEquals(sum1(2, 3), sum2(2, 3))
+        fun addB(a: Int, b: Int) = a + b
+        assertEquals(addA(2, 3), addB(2, 3))
     }
 
     @Test
     fun `unit`() {
-        fun printSum1(a: Int, b: Int): Unit {println("$a + $b = ${a + b}")}
-        fun printSum2(a: Int, b: Int) = println("$a + $b = ${a + b}")
-        assertEquals(printSum1(2, 3), Unit)
-        assertEquals(printSum2(2, 3), Unit)
+        fun doSomethingA(): Unit {}
+        fun doSomethingB() = doSomethingA()
+        assertEquals(doSomethingA(), Unit)
+        assertEquals(doSomethingB(), Unit)
     }
 
     @Test
@@ -27,7 +27,9 @@ class BasicSyntaxTest {
         val b = 2
         assert(b is Int)
         // this would give a compile error "val cannot be reassigned"
+        //
         //     b = 2
+        //
         // to reassign, you need to use the var keyword instead
         var c = 3
         c = 4
