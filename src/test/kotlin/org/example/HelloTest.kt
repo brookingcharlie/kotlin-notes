@@ -38,6 +38,13 @@ class BasicSyntaxTest {
     }
 
     @Test
+    fun `string templates`() {
+        val x = 3
+        val s = "result: $x is half of ${x * 2}"
+        assertEquals(s, "result: 3 is half of 6")
+    }
+
+    @Test
     fun `inline if`() {
         fun maxOf(a: Int, b: Int) = if (a > b) a else b
         assertEquals(maxOf(2, 3), 3)
