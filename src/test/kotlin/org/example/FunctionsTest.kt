@@ -21,6 +21,12 @@ class FunctionsTest {
     }
 
     @Test
+    fun `generic functions`() {
+        fun <T> singletonList(item: T): List<T> = listOf(item)
+        assertEquals(listOf(1), singletonList(1))
+    }
+
+    @Test
     fun `anonymous functions and lambdas`() {
         val addAnon = fun(a: Int, b: Int): Int {return a + b}
         assertEquals(5, addAnon(2, 3))
@@ -34,6 +40,13 @@ class FunctionsTest {
     }
 
     @Test
+    fun `implicit single parameter`() {
+        val ns = (1..8).toList()
+        val evens = ns.filter {it % 2 == 0}
+        assertEquals(listOf(2, 4, 6, 8), evens)
+    }
+
+    @Test
     fun `higher-order functions`() {
         fun <T, R> Collection<T>.fold(initial: R, combine: (acc: R, nextElement: T) -> R): R {
             var accumulator: R = initial
@@ -43,12 +56,6 @@ class FunctionsTest {
             return accumulator
         }
         assertEquals(6, listOf(1, 2, 3).fold(0, {a, b -> a + b}))
-    }
-
-    @Test
-    fun `generic functions`() {
-        fun <T> singletonList(item: T): List<T> = listOf(item)
-        assertEquals(listOf(1), singletonList(1))
     }
 
     @Test
