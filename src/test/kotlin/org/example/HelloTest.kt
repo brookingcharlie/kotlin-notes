@@ -79,16 +79,15 @@ class BasicSyntaxTest {
 
     @Test
     fun `pattern matching`() {
-        fun describe(obj: Any): String =
+        fun fact(obj: Any): Int =
             when (obj) {
-                1          -> "One"
-                "Hello"    -> "Greeting"
-                is Long    -> "Long"
-                !is String -> "Not a string"
-                else       -> "Unknown"
+                0 -> 1
+                1 -> 1
+                is Int -> obj * fact(obj - 1)
+                else -> throw UnsupportedOperationException()
             }
-        assertEquals("One", describe(1))
-        assertEquals("Not a string", describe(2))
+        assertEquals(1, fact(1))
+        assertEquals(6, fact(3))
     }
 
     @Test
