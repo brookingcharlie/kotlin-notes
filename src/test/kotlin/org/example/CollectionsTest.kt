@@ -48,6 +48,25 @@ class CollectionsTest {
     }
 
     @Test
+    fun `arrays`() {
+        val xs = arrayOf(1, 2, 3)
+        xs[2] = 4
+        assertEquals(2, xs[1])
+        assertEquals(4, xs[2])
+
+        val ys: Array<Int?> = arrayOfNulls(4)
+        assertEquals(4, ys.size)
+        assertEquals(null, ys[3])
+
+        val zs: IntArray = intArrayOf(1, 2, 3)
+        assertEquals(2, zs[1])
+
+        for (x in xs) {
+            // doSomething(x)
+        }
+    }
+
+    @Test
     fun `copying lists`() {
         val xs = mutableListOf(1, 2, 3)
         val ys = xs.toList()
