@@ -13,9 +13,13 @@ class BasicSyntaxTest {
         }
         fun addB(a: Int, b: Int) = a + b
         assertEquals(addA(2, 3), addB(2, 3))
+        assertEquals(addA(a = 2, b = 3), addB(b = 3, a = 2))
 
         fun addC(a: Int, b: Int = 1) = a + b
         assertEquals(addC(2, 1), addC(2))
+
+        fun addD(a: Int, b: Int = 1, c: Int) = a + b + c
+        assertEquals(addD(2, 1, 3), addC(2, c = 3))
     }
 
     @Test
