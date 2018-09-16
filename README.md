@@ -2,6 +2,16 @@
 
 My notes on Kotlin, written as unit tests that demonstrate features of the language.
 
+## Usage
+
+These tests are mainly intended for reading, to understand how Kotlin works.
+
+To execute them, you can use Maven:
+
+```
+mvn test
+```
+
 ## Maintenance notes
 
 ### How the project was created
@@ -20,3 +30,5 @@ mvn archetype:generate \
   -Dversion='1.0-SNAPSHOT' \
   -Dpackage='org.example'
 ```
+
+Then modified to remove main source folder since we only need tests.
