@@ -2,6 +2,7 @@ package org.example
 
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 // Based on https://kotlinlang.org/docs/reference/basic-syntax.html
 class BasicSyntaxTest {
@@ -18,15 +19,15 @@ class BasicSyntaxTest {
     fun `unit`() {
         fun doSomethingA(): Unit {}
         fun doSomethingB() = doSomethingA()
-        assertEquals(doSomethingA(), Unit)
-        assertEquals(doSomethingB(), Unit)
+        assertEquals(Unit, doSomethingA())
+        assertEquals(Unit, doSomethingB())
     }
 
     @Test
     fun `val and var`() {
         val a: Int = 1
         val b = 2
-        assert(b is Int)
+        assertTrue(b is Int)
         // this would give a compile error "val cannot be reassigned"
         //
         //     b = 2
@@ -34,20 +35,20 @@ class BasicSyntaxTest {
         // to reassign, you need to use the var keyword instead
         var c = 3
         c = 4
-        assertEquals(c, 4)
+        assertEquals(4, c)
     }
 
     @Test
     fun `string templates`() {
         val x = 3
         val s = "result: $x is half of ${x * 2}"
-        assertEquals(s, "result: 3 is half of 6")
+        assertEquals("result: 3 is half of 6", s)
     }
 
     @Test
     fun `inline if`() {
         fun maxOf(a: Int, b: Int) = if (a > b) a else b
-        assertEquals(maxOf(2, 3), 3)
+        assertEquals(3, maxOf(2, 3))
     }
 
     @Test
@@ -63,7 +64,7 @@ class BasicSyntaxTest {
             }
             throw UnsupportedOperationException()
         }
-        assertEquals(addToNullable(4), 9)
+        assertEquals(9, addToNullable(4))
     }
 
     @Test
@@ -79,6 +80,6 @@ class BasicSyntaxTest {
             }
             throw UnsupportedOperationException()
         }
-        assertEquals(getLengthOfAny("asdf"), 4)
+        assertEquals(4, getLengthOfAny("asdf"))
     }
 }
