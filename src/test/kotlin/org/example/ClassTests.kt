@@ -105,7 +105,7 @@ class ClassTests {
     @Test
     fun `interfaces`() {
         class Implementation : Interface {
-            override var x: Int
+            override val x: Int
                 get() = 123
             override fun getFoo(): String {
                 return "Hello"
@@ -135,14 +135,5 @@ class ClassTests {
         // Provides copy function
         assertEquals(Customer("Harry", "harry@example.org"), harry1.copy())
         assertEquals(Customer("Harry", "hazza@example.com"), harry1.copy(email = "hazza@example.com"))
-    }
-
-    object Singleton {
-        val name = "Name"
-    }
-
-    @Test
-    fun `singleton`() {
-        assertEquals("Name", Singleton.name)
     }
 }
