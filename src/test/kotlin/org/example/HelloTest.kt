@@ -39,16 +39,56 @@ class BasicSyntaxTest {
     }
 
     @Test
-    fun `string templates`() {
+    fun `string template`() {
         val x = 3
         val s = "result: $x is half of ${x * 2}"
         assertEquals("result: 3 is half of 6", s)
     }
 
     @Test
-    fun `inline if`() {
+    fun `if expression`() {
         fun maxOf(a: Int, b: Int) = if (a > b) a else b
         assertEquals(3, maxOf(2, 3))
+    }
+
+    @Test
+    fun `for loop`() {
+        fun sum(ns: List<Int>): Int {
+            var acc = 0
+            for (n in ns) {
+                acc += n
+            }
+            return acc
+        }
+        assertEquals(6, sum(listOf(1, 2, 3)))
+    }
+
+    @Test
+    fun `while loop`() {
+        fun fact(n: Int): Int {
+            var acc = 1
+            var i = n
+            while (i > 1) {
+                acc *= i
+                i--
+            }
+            return acc
+        }
+        assertEquals(6, fact(3))
+    }
+
+    @Test
+    fun `pattern matching`() {
+        fun describe(obj: Any): String =
+            when (obj) {
+                1          -> "One"
+                "Hello"    -> "Greeting"
+                is Long    -> "Long"
+                !is String -> "Not a string"
+                else       -> "Unknown"
+            }
+        assertEquals("One", describe(1))
+        assertEquals("Not a string", describe(2))
     }
 
     @Test
