@@ -25,4 +25,13 @@ class ClassesTest {
         assertEquals(Customer("Harry", "harry@example.org"), harry1.copy())
         assertEquals(Customer("Harry", "hazza@example.com"), harry1.copy(email = "hazza@example.com"))
     }
+
+    object Singleton {
+        val name = "Name"
+    }
+
+    @Test
+    fun `singleton`() {
+        assertEquals("Name", Singleton.name)
+    }
 }

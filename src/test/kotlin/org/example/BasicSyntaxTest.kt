@@ -91,22 +91,6 @@ class BasicSyntaxTest {
     }
 
     @Test
-    fun `nullable checks`() {
-        fun addToNullable(d: Int?): Int {
-            // this would give "error: operator call ... not allowed on a nullable receiver 'd'"
-            //
-            //     return d + 5
-            //
-            // but the compiler automatically casts to non-nullable when it sees this if-stmt
-            if (d != null) {
-                return d + 5
-            }
-            throw UnsupportedOperationException()
-        }
-        assertEquals(9, addToNullable(4))
-    }
-
-    @Test
     fun `type checks`() {
         fun getLengthOfAny(x: Any): Int {
             // this would give "error: unresolved reference: length"
