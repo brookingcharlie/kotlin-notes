@@ -7,7 +7,7 @@ import kotlin.test.assertTrue
 // Based on https://kotlinlang.org/docs/reference/basic-syntax.html
 class BasicSyntaxTest {
     @Test
-    fun `function notation`() {
+    fun `function`() {
         fun addA(a: Int, b: Int): Int {
             return a + b
         }
