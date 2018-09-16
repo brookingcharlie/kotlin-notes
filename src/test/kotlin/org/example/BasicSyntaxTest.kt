@@ -7,12 +7,15 @@ import kotlin.test.assertTrue
 // Based on https://kotlinlang.org/docs/reference/basic-syntax.html
 class BasicSyntaxTest {
     @Test
-    fun `function`() {
+    fun `functions`() {
         fun addA(a: Int, b: Int): Int {
             return a + b
         }
         fun addB(a: Int, b: Int) = a + b
         assertEquals(addA(2, 3), addB(2, 3))
+
+        fun addC(a: Int, b: Int = 1) = a + b
+        assertEquals(addC(2, 1), addC(2))
     }
 
     @Test
