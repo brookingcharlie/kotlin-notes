@@ -3,7 +3,7 @@ package org.example
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class NullSafetyTest {
+class NullSafetyTests {
     @Test
     fun `non-nullable types`() {
         fun addToNonNullable(d: Int): Int {

@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class CollectionsTest {
+class CollectionTests {
     @Test
     fun `lists`() {
         val immutableList = listOf(1, 2, 3)

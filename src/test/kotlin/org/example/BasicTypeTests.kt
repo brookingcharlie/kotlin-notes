@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class BasicTypesTest {
+class BasicTypeTests {
     @Test
     fun `basic types`() {
         val d: Double = 3.14

@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class RangesTest {
+class RangeTests {
     @Test
     fun `progressions`() {
         assertEquals(listOf(1, 2, 3), (1..3).toList())

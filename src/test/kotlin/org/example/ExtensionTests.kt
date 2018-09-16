@@ -3,7 +3,7 @@ package org.example
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class ExtensionsTest {
+class ExtensionTests {
     @Test
     fun `extension method`() {
         fun String.isThreeLetters() = this.length == 3

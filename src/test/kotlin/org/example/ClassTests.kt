@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class ClassesTest {
+class ClassTests {
     @Test
     fun `data classes`() {
         data class Customer(val name: String, var email: String)

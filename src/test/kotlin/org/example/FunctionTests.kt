@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class FunctionsTest {
+class FunctionTests {
     @Test
     fun `named arguments`() {
         fun addA(a: Int, b: Int) = a + b

@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class BasicSyntaxTest {
+class BasicSyntaxTests {
     @Test
     fun `functions`() {
         fun addA(a: Int, b: Int): Int {
