@@ -21,7 +21,11 @@ class FunctionsTest {
     }
 
     @Test
-    fun `lambdas`() {
+    fun `anonymous functions and lambdas`() {
+        val addAnon = fun(a: Int, b: Int): Int {return a + b}
+        assertEquals(5, addAnon(2, 3))
+        assertEquals(5, addAnon.invoke(2, 3))
+
         val add: (Int, Int) -> Int = {a, b -> a + b}
         assertEquals(5, add(2, 3))
 
