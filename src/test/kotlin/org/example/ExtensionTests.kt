@@ -29,11 +29,12 @@ class ExtensionTests {
     }
 
     @Test
+    @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
     fun `member precedence`() {
         class C {
             fun getFoo() = "member"
         }
-        fun C.getFoo() = "extension"
+        fun C.getFoo() = "shadowed"
         fun C.getFoo(i: Int) = "extension $i"
         assertEquals("member", C().getFoo())
         assertEquals("extension 1", C().getFoo(1))

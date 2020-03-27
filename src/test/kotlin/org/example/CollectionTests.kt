@@ -29,7 +29,7 @@ class CollectionTests {
         assertEquals(4, mutableMap['d'])
 
         for ((k, v) in immutableMap) {
-            // doSomething(k, v)
+            assertEquals(v, immutableMap[k])
         }
     }
 
@@ -76,6 +76,7 @@ class CollectionTests {
     }
 
     @Test
+    @Suppress("UNUSED_PARAMETER")
     fun `covariance`() {
         open class Shape
         class Circle(r: Int) : Shape()

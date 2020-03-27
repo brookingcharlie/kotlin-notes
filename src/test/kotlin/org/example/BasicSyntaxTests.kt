@@ -23,9 +23,10 @@ class BasicSyntaxTests {
     }
 
     @Test
+    @Suppress("USELESS_IS_CHECK", "VARIABLE_WITH_REDUNDANT_INITIALIZER")
     fun `val and var`() {
         val a: Int = 1
-        val b = 2
+        val b = a + 1
         assertTrue(b is Int)
         // this would give a compile error "val cannot be reassigned"
         //

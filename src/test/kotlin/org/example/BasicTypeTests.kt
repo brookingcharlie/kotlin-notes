@@ -7,6 +7,7 @@ import kotlin.test.assertTrue
 
 class BasicTypeTests {
     @Test
+    @Suppress("UNUSED_VARIABLE")
     fun `basic types`() {
         val d: Double = 3.14
         val f: Float = 6.28F
@@ -17,6 +18,7 @@ class BasicTypeTests {
     }
 
     @Test
+    @Suppress("ReplaceAssertBooleanWithAssertEquality", "DEPRECATED_IDENTITY_EQUALS")
     fun `boxed vs non-boxed`() {
         // On the Java platform, numbers are stored as JVM primitive types,
         // unless we need a nullable number reference, in which case they're boxed.

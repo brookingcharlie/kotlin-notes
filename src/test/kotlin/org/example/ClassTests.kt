@@ -6,6 +6,7 @@ import kotlin.test.assertTrue
 
 class ClassTests {
     @Test
+    @Suppress("USELESS_IS_CHECK")
     fun `empty class`() {
         class Empty
         assertTrue(Empty() is Empty)
@@ -81,6 +82,7 @@ class ClassTests {
     }
 
     @Test
+    @Suppress("USELESS_IS_CHECK")
     fun `inheritance`() {
         open class Base(val p: Int) {
             open val foo: Int get() = p + 1
