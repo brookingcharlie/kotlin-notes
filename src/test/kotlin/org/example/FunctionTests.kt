@@ -28,21 +28,21 @@ class FunctionTests {
 
     @Test
     fun `anonymous functions and lambdas`() {
-        val addAnon = fun(a: Int, b: Int): Int {return a + b}
+        val addAnon = fun(a: Int, b: Int): Int { return a + b }
         assertEquals(5, addAnon(2, 3))
         assertEquals(5, addAnon.invoke(2, 3))
 
-        val add: (Int, Int) -> Int = {a, b -> a + b}
+        val add: (Int, Int) -> Int = { a, b -> a + b }
         assertEquals(5, add(2, 3))
 
-        val compute: () -> Int = {5}
+        val compute: () -> Int = { 5 }
         assertEquals(5, compute())
     }
 
     @Test
     fun `implicit single parameter`() {
         val ns = (1..8).toList()
-        val evens = ns.filter {it % 2 == 0}
+        val evens = ns.filter { it % 2 == 0 }
         assertEquals(listOf(2, 4, 6, 8), evens)
     }
 
@@ -55,7 +55,7 @@ class FunctionTests {
             }
             return accumulator
         }
-        assertEquals(6, listOf(1, 2, 3).fold(0, {a, b -> a + b}))
+        assertEquals(6, listOf(1, 2, 3).fold(0, { a, b -> a + b }))
     }
 
     @Test

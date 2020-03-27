@@ -10,6 +10,7 @@ class BasicSyntaxTests {
         fun addA(a: Int, b: Int): Int {
             return a + b
         }
+
         fun addB(a: Int, b: Int) = a + b
         assertEquals(addA(2, 3), addB(2, 3))
     }

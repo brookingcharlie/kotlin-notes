@@ -15,7 +15,7 @@ class ClassTests {
     @Test
     fun `primary constructor`() {
         // Explicit primary constructor (needed if you have modifiers)
-        class Person0 constructor (nameParam: String) {
+        class Person0 constructor(nameParam: String) {
             val name = nameParam
         }
         assertEquals("Fred", Person0("Fred").name)
@@ -35,6 +35,7 @@ class ClassTests {
     fun `init block`() {
         class Person(val name: String) {
             var properName: String? = null;
+
             init {
                 properName = name.capitalize()
             }
@@ -46,10 +47,12 @@ class ClassTests {
     fun `secondary constructor`() {
         class Person(val name: String) {
             var mood: String? = null
+
             constructor(name: String, mood: String) : this(name) {
                 this.mood = mood
             }
         }
+
         val person = Person("Fred", "happy")
         assertEquals("Fred", person.name)
         assertEquals("happy", person.mood)
@@ -63,9 +66,12 @@ class ClassTests {
                 get() = name.capitalize()
             var preferredName
                 get() = _preferredName
-                set(value) {_preferredName = value}
+                set(value) {
+                    _preferredName = value
+                }
             private var _preferredName: String? = null
         }
+
         val person = Person("fred")
         person.preferredName = "Freddie"
         assertEquals("Fred", person.properName)
@@ -74,8 +80,11 @@ class ClassTests {
         // Using implicit backing field
         class Person2(val name: String) {
             var preferredName: String? = null
-                set(value) {field = value}
+                set(value) {
+                    field = value
+                }
         }
+
         val person2 = Person2("fred")
         person2.preferredName = "Freddie"
         assertEquals("Freddie", person2.preferredName)
@@ -88,10 +97,12 @@ class ClassTests {
             open val foo: Int get() = p + 1
             open fun getBar(): Int = p * 2
         }
+
         class Derived(p: Int) : Base(p) {
             override val foo: Int get() = p + 2
             override fun getBar(): Int = super.getBar() * 3
         }
+
         val derived = Derived(5)
         assertTrue(derived is Derived)
         assertTrue(derived is Base)
@@ -109,10 +120,12 @@ class ClassTests {
         class Implementation : Interface {
             override val x: Int
                 get() = 123
+
             override fun getFoo(): String {
                 return "Hello"
             }
         }
+
         val implementation = Implementation()
         assertEquals(123, implementation.x)
         assertEquals("Hello", implementation.getFoo())
@@ -121,6 +134,7 @@ class ClassTests {
     @Test
     fun `data classes`() {
         data class Customer(val name: String, var email: String)
+
         val harry1 = Customer("Harry", "harry@example.org")
         val harry2 = Customer("Harry", "hazza@example.com")
 

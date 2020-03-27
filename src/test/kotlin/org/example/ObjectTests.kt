@@ -16,6 +16,7 @@ class ObjectTests {
     @Test
     fun `inheritance`() {
         open class A(val x: Int)
+
         val obj: A = object : A(1) {}
         assertEquals(1, obj.x)
     }

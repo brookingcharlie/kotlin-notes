@@ -14,7 +14,7 @@ class ExtensionTests {
     @Test
     fun `static resolution`() {
         open class Shape
-        class Circle: Shape()
+        class Circle : Shape()
 
         fun Shape.getTooltip() = "Any kind of shape"
         fun Circle.getTooltip() = "A circle"
@@ -34,6 +34,7 @@ class ExtensionTests {
         class C {
             fun getFoo() = "member"
         }
+
         fun C.getFoo() = "shadowed"
         fun C.getFoo(i: Int) = "extension $i"
         assertEquals("member", C().getFoo())

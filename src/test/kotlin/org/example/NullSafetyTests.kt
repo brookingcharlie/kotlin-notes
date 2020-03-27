@@ -9,6 +9,7 @@ class NullSafetyTests {
         fun addToNonNullable(d: Int): Int {
             return d + 5
         }
+
         val n: Int = 4
         assertEquals(9, addToNonNullable(n))
 
